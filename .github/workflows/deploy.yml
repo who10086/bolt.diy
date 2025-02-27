@@ -29,7 +29,7 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "pnpm install"
+        run: "npm install"
 
       - name: Build step
         run: "pnpm run build"
@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "who10086-boltdiy"
-          entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "dist"
+          entrypoint: "index.js"
+          root: "build/client"
           
           
